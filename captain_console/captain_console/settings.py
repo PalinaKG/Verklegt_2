@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   # 'CaptainConsole.apps.CaptainconsoleConfig',
+    'game.apps.GamesConfig',
+    'about_us.apps.AboutUsConfig',
+    'accessory.apps.AccessoriesConfig',
+    'console.apps.ConsoleConfig',
+    'manufacturer.apps.ManufacturerConfig',
+    'sale.apps.SaleConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -124,3 +130,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
