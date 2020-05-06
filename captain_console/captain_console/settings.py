@@ -134,3 +134,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# ATH: @login_required fyrir ofan foll i views til ad gera tau bara adgengileg innskradum
+LOGIN_URL = 'user/login'
+LOGIN_REDIRECT_URL = '/user/profile'
