@@ -4,7 +4,7 @@
     <p>{{ console.description }}</p>
     <p>{{ console.price }}</p>
     <p>Manufacturer: {{ console.manufacturer.name }}</p>
-    {% for console_img in console.consoleimage_set.all %}
-        <img src="{{ console_image.img }}" class="console-img" />
+    {% for console_image in console.consoleimage_set.all %}
+        <img src="{{ console_image.image }}" class="console-img"/>
     {% endfor %}
 {% endblock %}

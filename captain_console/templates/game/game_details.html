@@ -2,9 +2,9 @@
 {% block content %}
     <h1>{{ game.name }}</h1>
     <p>{{ game.description }}</p>
-    <p>{{ game.price }}</p>
+    <p>{{ game.price }}$</p>
     <p>Manufacturer: {{ game.manufacturer.name }}</p>
-    {% for game_img in game.gameimage_set.all %}
-        <img src="{{ game_image.img }}" class="game-img" />
+    {% for game_image in game.gameimage_set.all %}
+        <img src="{{ game_image.image }}" class="game-img" />
     {% endfor %}
 {% endblock %}
