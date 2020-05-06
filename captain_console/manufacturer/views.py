@@ -6,5 +6,5 @@ from manufacturer.models import Manufacturer
 
 
 def index(request):
-    context = {'manufacturer': Manufacturer.objects.all()}
+    context = {'manufacturers': Manufacturer.objects.all()}
     return render(request, 'manufacturer/index.html', context)
