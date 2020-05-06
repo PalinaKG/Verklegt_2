@@ -5,7 +5,6 @@ from django.db import models
 from manufacturer.models import Manufacturer
 
 
-
 class Console(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=999, blank=True)
