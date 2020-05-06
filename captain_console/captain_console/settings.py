@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'accessory.apps.AccessoriesConfig',
     'console.apps.ConsoleConfig',
     'manufacturer.apps.ManufacturerConfig',
-    'sale.apps.SaleConfig'
+    'sale.apps.SaleConfig',
+    'user.apps.UserConfig'
 
 ]
 
