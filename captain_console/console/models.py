@@ -11,8 +11,11 @@ class Console(models.Model):
     description = models.CharField(max_length=999, blank=True)
     price = models.FloatField()
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
-
+    def __str__(self):
+        return self.name
 
 class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.image
