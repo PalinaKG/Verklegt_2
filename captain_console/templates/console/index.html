@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+
 {% block content %}
     <h1>HIIIIIII CONSOLE</h1>
+    {% for console in consoles%}
+        {% include 'console/single_console.html' with console=console %}
+    {% endfor %}
 {% endblock %}
