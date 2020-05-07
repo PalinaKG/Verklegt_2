@@ -13,6 +13,11 @@
         {% for console in consoles %}
             {% include 'console/single_console.html' with console=console %}
         {% endfor %}
+        {% for game in games %}
+            {% include 'game/single_game.html' with game=game %}
+        {% endfor %}
+
     </div>
+
 
 {% endblock %}

@@ -6,6 +6,9 @@ from console.models import Console, ConsoleImage
 
 
 # Create your views here.
+from game.models import Game
+
+
 def index(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
@@ -17,9 +20,13 @@ def index(request):
             'firstImage': x.consoleimage_set.first().image
 
         } for x in Console.objects.filter(name__icontains=search_filter)]
+
         return JsonResponse({'data': consoles})
     context = {'consoles': Console.objects.all().order_by('name')}
-    return render(request, 'console/index.html', context)
+    return render(request, 'homepage/index.html', context)
+
+
+
 
 
 def get_console_by_id(request, id):
