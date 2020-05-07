@@ -5,11 +5,11 @@ from game.models import Game
 
 
 class Cart(models.Model):
-    games = models.ManyToManyField(Game, null=True, blank=True)
-    total = models.DecimalField(max_digits=100, decimal_places=2, default=0.00)
-    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
-    update = models.DateTimeField(auto_now_add=False, auto_now=True)
-    active = models.BooleanField(default=True)
+    game = models.ForeignKey(Game, null=True, blank=True)
+    user = models.ForeignKey()
+    console = models.ForeignKey()
+    quantity = models.DecimalField()
+
 
     #def __unicode__(self):
     #    return "Cart id: %s" %(self.id)
