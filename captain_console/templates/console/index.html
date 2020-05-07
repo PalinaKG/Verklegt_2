@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="games">
+    <div class="consoles">
         {% for product in products %}
             {% if product.type_id == 2 %}
                 {% include 'console/single_console.html' with product=product %}

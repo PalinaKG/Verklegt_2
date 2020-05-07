@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>{{ console.name }}</h1>
-    <p>{{ console.description }}</p>
-    <p>{{ console.price }}</p>
-    <p>Manufacturer: {{ console.manufacturer.name }}</p>
-    {% for console_image in console.consoleimage_set.all %}
-        <img src="{{ console_image.image }}" class="console-img"/>
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price }}</p>
+    <p>Manufacturer: {{ product.manufacturer.name }}</p>
+    {% for product_image in product.consoleimage_set.all %}
+        <img src="{{ product_image.image }}" class="console-img"/>
     {% endfor %}
 
-    <a href="{% url 'delete_console' console.id %}" class="block btn btn-primary">Delete console</a>
-    <a href="{% url 'update_console' console.id %}" class="block btn btn-primary">Update console</a>
+    <a href="{% url 'delete_console' product.id %}" class="block btn btn-primary">Delete console</a>
+    <a href="{% url 'update_console' product.id %}" class="block btn btn-primary">Update console</a>
 {% endblock %}

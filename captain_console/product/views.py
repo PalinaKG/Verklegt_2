@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
@@ -7,13 +8,27 @@ from product.models import Product, ProductImage
 
 
 def product_index(request):
-    return render(request, 'product/index.html', {'products': Product.objects.all()})
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        products = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'firstImage': x.productimage_set.first().image
+        }
+            for x in Product.objects.filter(name__icontains=search_filter)]
+        products = list(Product.objects.filter(name__icontains=search_filter).values())
+        return JsonResponse({'data': products})
+    return render(request, 'product/index.html', context={'products': Product.objects.all().order_by('name')})
+
 
 def game_index(request):
     return render(request, 'game/index.html', {'products': Product.objects.all()})
 
+
 def console_index(request):
     return render(request, 'console/index.html', {'products': Product.objects.all()})
+
 
 def get_console_by_id(request, id):
     return render(request, 'console/console_details.html', {

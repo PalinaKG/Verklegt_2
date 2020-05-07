@@ -3,18 +3,18 @@ $(document).ready(function() {
         e.preventDefault();
         var searchText = $('#search-box').val();
         $.ajax( {
-            url: 'games/?search_filter=' + searchText,
+            url: '/products/?search_filter=' + searchText,
             type: 'GET',
             success: function(resp) {
                 var newHtml = resp.data.map(d => {
-                    return `<div class="well games">
-                        <a href="/games/${d.id}"/>
+                    return `<div class="well product">
+                        <a href="/products/${d.id}"/>
                         <img class="game-img" src="${d.firstImage}"/>
                         <h4>${d.name}</h4>
                         <p>${d.description}</p>
                     </div>`
                 });
-                $('.games').html(newHtml.join(''));
+                $('.products').html(newHtml.join(''));
                 $('#search-box').val('');
 
             },
@@ -23,5 +23,9 @@ $(document).ready(function() {
                 console.error(error)
             }
         });
+
+
+
     });
+
 });
