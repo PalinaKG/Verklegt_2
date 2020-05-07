@@ -23,12 +23,14 @@
                 <li><a href="{% url 'sale-index' %}">Sales</a></li>
                 <li><a href="{% url 'about_us-index' %}">About us</a></li>
 
+
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">Login</a></li>
                     <li><a href="{% url 'register' %}">Register</a></li>
                 {% endif %}
+                <li><a href="{% url 'cart-index' %}">Cart</a></li>
 
             </ul>
 
