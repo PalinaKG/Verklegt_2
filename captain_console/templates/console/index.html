@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h1>HIIIIIII CONSOLE</h1>
-    {% for console in consoles %}
-        {% include 'console/single_console.html' with console=console %}
-    {% endfor %}
+    <h3 class="red">Console</h3>
+    <div class="input-group">
+        <input type="search" class="form-control" id="search-box" placeholder="Enter your search here.."/>
+        <div class="input-group-btn">
+            <button type="button" id="search-btn" class="btn btn-default">Search</button>
+        </div>
+    </div>
+
+    <div class="consoles">
+        {% for console in consoles %}
+            {% include 'console/single_console.html' with console=console %}
+        {% endfor %}
+    </div>
+
 {% endblock %}
+

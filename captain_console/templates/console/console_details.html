@@ -7,4 +7,7 @@
     {% for console_image in console.consoleimage_set.all %}
         <img src="{{ console_image.image }}" class="console-img"/>
     {% endfor %}
+
+    <a href="{% url 'delete_console' console.id %}" class="block btn btn-primary">Delete console</a>
+    <a href="{% url 'update_console' console.id %}" class="block btn btn-primary">Update console</a>
 {% endblock %}
