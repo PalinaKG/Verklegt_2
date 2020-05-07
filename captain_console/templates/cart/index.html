@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Shopping cart</h3>
+
+    <p>MeME</p>
+
+    {% for item in cart %}
+        <p>Me</p>
+
+        {% include 'cart/cart_list.html' with item=item %}
+
+    {% endfor %}
+
+
+{% endblock %}

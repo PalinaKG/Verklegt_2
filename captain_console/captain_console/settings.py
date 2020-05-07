@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'console.apps.ConsoleConfig',
     'manufacturer.apps.ManufacturerConfig',
     'sale.apps.SaleConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'carts',
 
 ]
 
