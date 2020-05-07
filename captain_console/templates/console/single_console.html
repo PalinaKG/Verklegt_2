@@ -1,9 +1,9 @@
 <div class="well console">
     <a href="/consoles/{{ console.id }}">
-        <img class="console-img" src="{{ console.gamemage_set.first.image }}" />
-        <h4>{{ console.name }}</h4>
-        <p>{{ console.description }}</p>
-        <p>{{ console.price }}</p>
+        <img class="console-img" src="{{ product.productimage_set.first.image }}" />
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
     </a>
 
 </div>

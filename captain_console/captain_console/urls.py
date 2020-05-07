@@ -21,12 +21,11 @@ from captain_console import views
 urlpatterns = [
     path('', views.index, name="homepage-index"),
     path('admin/', admin.site.urls),
-    path('games/', include('game.urls')),
     path('manufacturers/', include('manufacturer.urls')),
-    path('consoles/', include('console.urls')),
+    path('products/', include('product.urls')),
     path('sales/', include('sale.urls')),
     path('about/', include('about_us.urls')),
     path('accessory/', include('accessory.urls')),
-    path('user/', include('user.urls')),
-    path('cart/', include('carts.urls'))
+    path('user/', include('user.urls'))
+    #path('cart/', include('carts.urls'))
 ]

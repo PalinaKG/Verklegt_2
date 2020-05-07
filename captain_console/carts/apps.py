@@ -2,4 +2,8 @@
 
 
 #class CartsConfig(AppConfig):
+
    # name = 'carts'
+
+ #   name = 'carts'
+

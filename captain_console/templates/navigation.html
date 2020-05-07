@@ -15,7 +15,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="{% url 'game-index' %}">Games <span class="sr-only">(current)</span></a></li>
+                <li><a href="{% url 'product-index' %}">Products</a></li>
+                <li><a href="{% url 'game-index' %}">Games</a></li>
                 <li><a href="{% url 'console-index' %}">Consoles</a></li>
                 <li><a href="{% url 'manufacturer-index' %}">Manufacturers</a></li>
                 <li><a href="{% url 'accessory-index' %}">Accessories</a></li>
@@ -28,7 +29,6 @@
                     <li><a href="{% url 'login' %}">Login</a></li>
                     <li><a href="{% url 'register' %}">Register</a></li>
                 {% endif %}
-                <li><a href="{% url 'cart-index' %}">Cart</a></li>
 
             </ul>
 

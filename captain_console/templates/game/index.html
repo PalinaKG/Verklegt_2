@@ -9,6 +9,16 @@
         </div>
     </div>
 
+    <div class="consoles">
+        {% for product in products %}
+            {% if product.type_id == 1 %}
+                {% include 'game/single_game.html' with product=product %}
+            {% endif %}
+        {% endfor %}
+
+    </div>
+
+
 
 {% endblock %}
 

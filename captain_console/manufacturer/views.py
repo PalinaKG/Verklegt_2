@@ -3,8 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 from manufacturer.models import Manufacturer
-from game.models import Game
-from console.models import Console
+#from game.models import Game
+#from console.models import Console
+from product.models import Product
 
 
 def index(request):
@@ -13,11 +14,11 @@ def index(request):
 
 
 def get_manufacturer_by_id(request, id):
-    consoles = Console.objects.filter(manufacturer_id=id)
-    id_list = list(Console.objects.filter(manufacturer_id=id).values_list('id', flat=True))
-    games = Game.objects.none()
+    consoles = Product.objects.filter(manufacturer_id=id)
+    id_list = list(Product.objects.filter(manufacturer_id=id).values_list('id', flat=True))
+    games = Product.objects.none()
     for x in range(len(id_list)):
-        gam = Game.objects.filter(console_id=id_list[x])
+        gam = Product.objects.filter(console_id=id_list[x])
         games = games.union(games, gam)
     context = {'consoles': consoles, 'games': games}
     return render(request, 'manufacturer/manufacturer_details.html', context)

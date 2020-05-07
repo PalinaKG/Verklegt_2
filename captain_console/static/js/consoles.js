@@ -3,6 +3,27 @@ $(document).ready(function() {
         e.preventDefault();
         var searchText = $('#search-box').val();
         $.ajax( {
+            url: 'products/?search_filter=' + searchText,
+            type: 'GET',
+            success: function(resp) {
+                var newHtml = resp.data.map(d => {
+                    return `<div class="well console">
+                        <a href="/consoles/${d.id}"/>
+                        <img class="console-img" src="${d.firstImage}"/>
+                        <h4>${d.name}</h4>
+                        <p>${d.description}</p>
+                    </div>`
+                });
+                $('.consoles').html(newHtml.join(''));
+                $('#search-box').val('');
+
+            },
+            error: function (xhr, status, error) {
+                // TODO: Show toastr
+                console.error(error)
+            }
+        });
+        $.ajax( {
             url: 'consoles/?search_filter=' + searchText,
             type: 'GET',
             success: function(resp) {
