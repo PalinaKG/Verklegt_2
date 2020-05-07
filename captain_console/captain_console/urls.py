@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from captain_console import views
+
 urlpatterns = [
-    path('', include('game.urls')),
+    path('', views.index, name="homepage-index"),
     path('admin/', admin.site.urls),
     path('games/', include('game.urls')),
     path('manufacturers/', include('manufacturer.urls')),

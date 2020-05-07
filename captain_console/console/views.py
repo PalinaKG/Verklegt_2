@@ -9,10 +9,11 @@ from console.models import Console, ConsoleImage
 def index(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
+
         consoles = [{
             'id': x.id,
             'name': x.name,
-            'description': x.description,
+           'description': x.description,
             'firstImage': x.consoleimage_set.first().image
 
         } for x in Console.objects.filter(name__icontains=search_filter)]
@@ -57,7 +58,6 @@ def update_console(request, id):
             return redirect('console_details', id=id)
     else:
         form = ConsoleUpdateForm(instance=instance)
-        print(2)
         return render(request, 'console/update_console.html', {
             'form': form,
             'id': id

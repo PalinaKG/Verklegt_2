@@ -18,3 +18,4 @@ class ConsoleImage(models.Model):
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
     def __str__(self):
         return self.image
+

@@ -3,7 +3,7 @@ $(document).ready(function() {
         e.preventDefault();
         var searchText = $('#search-box').val();
         $.ajax( {
-            url: '?search_filter=' + searchText,
+            url: 'consoles/?search_filter=' + searchText,
             type: 'GET',
             success: function(resp) {
                 var newHtml = resp.data.map(d => {
@@ -16,6 +16,7 @@ $(document).ready(function() {
                 });
                 $('.consoles').html(newHtml.join(''));
                 $('#search-box').val('');
+
             },
             error: function (xhr, status, error) {
                 // TODO: Show toastr
