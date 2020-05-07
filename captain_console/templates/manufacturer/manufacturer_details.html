@@ -1,4 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>{{ manufacturer.name }}</h1>
+    {% for console in consoles %}
+        {% include 'console/single_console.html' with console=console %}
+    {% endfor %}
+    {% for game in games %}
+        {% include 'game/single_game.html' with game=game %}
+    {% endfor %}
 {% endblock %}
