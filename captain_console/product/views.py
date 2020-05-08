@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 # Create your views here.
 
 from product.forms.product_forms import ConsoleCreateForm, ConsoleUpdateForm
-from product.models import Product, ProductImage
+from product.models import Product, ProductImage, SearchHistory
 
 
 def product_index(request):
@@ -16,9 +16,19 @@ def product_index(request):
             'description': x.description,
             'firstImage': x.productimage_set.first().image
         }
+
             for x in Product.objects.filter(name__icontains=search_filter)]
         return JsonResponse({'data': products})
     return render(request, 'product/index.html', context={'products': Product.objects.all().order_by('name')})
+
+
+def search_history(request):
+    print("HAAA")
+    search="BLAA"
+    if request.method == 'POST':
+        search = SearchHistory(name=request.POST(search))
+        search.save()
+    return redirect('product-index')
 
 
 def game_index(request):

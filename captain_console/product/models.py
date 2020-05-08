@@ -37,6 +37,7 @@ class Product(models.Model):
     release_year = models.FloatField()
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
     genre = models.ForeignKey(GameGenre, on_delete=models.CASCADE)
+    on_sale=models.BooleanField()
 
     def __str__(self):
         return self.name
@@ -51,4 +52,4 @@ class ProductImage(models.Model):
 
 
 class SearchHistory(models.Model):
-    search=[]
+    name=models.CharField(max_length=999)

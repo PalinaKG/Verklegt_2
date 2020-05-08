@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Captain Console db" uuid="fe8d9c4b-0c6d-488b-a4f4-995d24e0b0d6">
+    <data-source source="LOCAL" name="CaptainConsole" uuid="ea8302bd-fe1f-4465-ba3d-4537687f3ab3">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/mpwrsbdj</jdbc-url>
+      <jdbc-url>jdbc:postgresql://balarama.db.elephantsql.com:5432/rpldlrdj</jdbc-url>
     </data-source>
   </component>
 </project>
