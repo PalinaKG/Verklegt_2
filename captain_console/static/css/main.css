@@ -13,15 +13,15 @@
 
 .products {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .consoles {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .games {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 /* FOOTER */
 .page-footer
