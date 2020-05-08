@@ -48,3 +48,7 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return self.image
+
+
+class SearchHistory(models.Model):
+    search=[]
