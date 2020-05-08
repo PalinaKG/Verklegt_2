@@ -14,8 +14,8 @@ def index(request):
 
 
 def get_manufacturer_by_id(request, id):
-    consoles = Product.objects.filter(manufacturer_id=id)
-    id_list = list(Product.objects.filter(manufacturer_id=id).values_list('id', flat=True))
+    consoles = Product.objects.filter(type_id=2, manufacturer_id=id)
+    id_list = list(Product.objects.filter(type_id=2, manufacturer_id=id).values_list('id', flat=True))
     games = Product.objects.none()
     for x in range(len(id_list)):
         gam = Product.objects.filter(console_id=id_list[x])
