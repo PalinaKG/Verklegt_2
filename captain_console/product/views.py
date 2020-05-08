@@ -85,3 +85,7 @@ def update_product(request, id):
             'form': form,
             'id': id
         })
+
+
+def sort_by(request, filter):
+    return render(request, 'product/index.html', context={'products': Product.objects.all().order_by(filter)})

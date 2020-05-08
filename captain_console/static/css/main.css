@@ -220,9 +220,6 @@ h3 a:hover
   width: 25%;
 }
 
-.about{
-  align-content: center;
-}
 
 .row:after {
   content: "";
