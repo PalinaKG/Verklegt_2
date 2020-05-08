@@ -32,13 +32,13 @@ def console_index(request):
 
 def get_console_by_id(request, id):
     return render(request, 'console/console_details.html', {
-        'console': get_object_or_404(Product, pk=id)
+        'consoles': get_object_or_404(Product, pk=id)
     })
 
 
 def get_game_by_id(request, id):
     return render(request, 'game/game_details.html', {
-        'game': get_object_or_404(Product, pk=id)
+        'games': get_object_or_404(Product, pk=id)
     })
 
 
