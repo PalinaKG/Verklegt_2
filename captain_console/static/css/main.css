@@ -1,13 +1,16 @@
 .game-img {
     width: 200px;
+  height: 200px;
     transition: transform 1s ease-in;
 }
 .console-img {
     width: 200px;
+  height: 200px;
     transition: transform 1s ease-in;
 }
 .product-img {
     width: 200px;
+  height: 200px;
     transition: transform 1s ease-in;
 }
 

@@ -17,7 +17,6 @@ def product_index(request):
             'firstImage': x.productimage_set.first().image
         }
             for x in Product.objects.filter(name__icontains=search_filter)]
-        products = list(Product.objects.filter(name__icontains=search_filter).values())
         return JsonResponse({'data': products})
     return render(request, 'product/index.html', context={'products': Product.objects.all().order_by('name')})
 
