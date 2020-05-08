@@ -1,7 +1,7 @@
-import carts
+import cart
 from . import views
 from django.urls import path
 
 urlpatterns = [
-    path('', carts.views.view, name="cart-index"),
+    path('', cart.views.view, name="cart-index"),
 ]
