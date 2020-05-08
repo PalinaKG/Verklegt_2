@@ -6,10 +6,11 @@ $(document).ready(function () {
     };
 
     var json = JSON.stringify(data);
-
+    console.log("HHIIII")
+    console.log(json)
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/products/");
-    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("name", "json");
     xhr.send(json);
     console.log(xhr)
 
